@@ -15,7 +15,6 @@
 
 // $router->get('/', function () use ($router) { return phpinfo(); });
 
-
 $router->get('/', function () use ($router) {
     return $router->app->version();
 });
