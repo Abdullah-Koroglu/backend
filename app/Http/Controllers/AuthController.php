@@ -41,7 +41,7 @@ class AuthController extends Controller
             $user->lastName = $request->lastName;
             $user->email = $request->email;
             $user->role = $request->role ?? 'Editor';
-            $user->color = $request->color ?? 0;
+            $user->color = $request->color ?? 1;
             $user->password = app('hash')->make($request->password);
 
             if ($user->save()) {
@@ -66,7 +66,7 @@ class AuthController extends Controller
     
     public function index()
     {
-        $users = User::all();
+        $users = User::orderBy('role', 'asc')->get();
 
         return $users;
     }

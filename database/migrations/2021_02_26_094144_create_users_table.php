@@ -19,7 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('lastName');
             $table->string('email')->unique();
             $table->string('role')->default('Editor');
-            $table->integer('color')->default(0);
+            $table->integer('color')->default(1);
             $table->string('password');
             $table->timestamps();
         });
