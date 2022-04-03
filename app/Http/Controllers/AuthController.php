@@ -168,6 +168,9 @@ class AuthController extends Controller
         if ($request->color) {
             $user->color = $request->color;
         }
+        if ($request->role) {
+            $user->role = $request->role;
+        }
         if ($request->password) {
             $user->password = app('hash')->make($request->password);
         }
