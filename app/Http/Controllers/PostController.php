@@ -17,6 +17,7 @@ class PostController extends Controller
         try {
             $post = new Post();
             $post->title = $request->title;
+            $post->test = $request->test;
             $post->body = $request->body;
 
             if ($post->save()) {
